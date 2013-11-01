@@ -31,6 +31,12 @@ Herein lies a script and instructions for compiling FFmpeg for Android. We owe i
     c. Run!
     
     		$ ./build4android.sh	
+    		# or to build with debugging symbols:
+    		$ ./build4android-debug.sh
     		
     		
 The result will be a collection of static libraries and headers at `ffmpegX.X.X/android/`
+
+### Note on Building with Debugging Symbols
+
+We had to pass the `-gdwarf-2` flag to gcc to properly generate debugging symbols for the ffmpeg libraries. A lot was going on, and perhaps instead something yet unexplained happened at a sub-atomic level.  

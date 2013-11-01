@@ -9,21 +9,23 @@ function build_one
 ./configure \
     --prefix=$PREFIX \
     --enable-shared \
-    --disable-static \
-    --disable-doc \
+    --enable-static \
     --disable-programs \
-    --disable-doc \
-    --disable-symver \
+    --disable-optimizations \
+    --disable-stripping \
+    --disable-asm \
+    --assert-level=2 \
+    --enable-debug=3 \
     --cross-prefix=$TOOLCHAIN/bin/arm-linux-androideabi- \
     --target-os=linux \
     --arch=arm \
     --enable-cross-compile \
     --sysroot=$SYSROOT \
-    --extra-cflags="-Os -fpic $ADDI_CFLAGS" \
+    --extra-cflags="-g -gdwarf-2 -g3 -O0 -fpic $ADDI_CFLAGS" \
     --extra-ldflags="$ADDI_LDFLAGS" \
     $ADDITIONAL_CONFIGURE_FLAG
 make clean
-make
+make -j4
 make install
 }
 CPU=arm
