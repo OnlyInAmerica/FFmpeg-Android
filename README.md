@@ -12,18 +12,18 @@ If you'd like to build FFmpeg with --enable-librtmp, first download and build Op
 #### librtmp
 2. Clone [RTMPDump](http://rtmpdump.mplayerhq.hu/), and copy `build_librtmp_for_android.sh` into the `./librtmp` subdirectory.
 
-       $ git clone git://git.ffmpeg.org/rtmpdump
-       $ cp /path/to/build_librtmp_for_android.sh ./rtmpdump/librtmp
-       $ ./rtmpdump/librtmp/build_librtmp_for_android.sh
+        $ git clone git://git.ffmpeg.org/rtmpdump
+        $ cp /path/to/build_librtmp_for_android.sh ./rtmpdump/librtmp
+        $ ./rtmpdump/librtmp/build_librtmp_for_android.sh
 
 3. Modify the header variables in `build_librtmp_for_android.sh` as appropriate:
 
-       #build_librtmp_for_android.sh
-       NDK=/path/to/your/android-ndk-r9c
- 	   SYSROOT=$NDK/platforms/android-19/arch-arm/
-	   TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64
-	   OPENSSL_DIR=/path/to/your/openssl-android/
-	   ...
+        #build_librtmp_for_android.sh
+        NDK=/path/to/your/android-ndk-r9c
+ 	    SYSROOT=$NDK/platforms/android-19/arch-arm/
+	    TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64
+	    OPENSSL_DIR=/path/to/your/openssl-android/
+	    ...
 
 
 ### Building FFmpeg
