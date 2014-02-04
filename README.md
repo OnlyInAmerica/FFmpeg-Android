@@ -49,6 +49,13 @@ If you'd like to build FFmpeg with --enable-librtmp, first download and build Op
 		SLIB_INSTALL_NAME='$(SLIBNAME_WITH_MAJOR)'
 		SLIB_INSTALL_LINKS='$(SLIBNAME)'
 		
+**If building with RTMP support:** Also modify the following line of `configure`:
+
+        # Replace this:
+        enabled librtmp    && require_pkg_config librtmp librtmp/rtmp.h RTMP_Socket
+        # With this:
+        enabled librtmp    && require librtmp librtmp/rtmp.h RTMP_Socket -L/path/to/rtmpdump/librtmp/android/arm/lib -lrtmp
+		
  3. Copy `build_ffmpeg_for_android.sh` or `build_ffmpeg_with_librtmp_for_android.sh` to `ffmpegX.X.X/` and run!
     a. Make sure the script is executable:
     
